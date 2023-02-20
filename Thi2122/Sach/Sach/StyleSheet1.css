@@ -1,0 +1,10 @@
+﻿.danhmuc, .content, .dangnhap{
+    display:inline-block;
+}
+
+.danhmuc{
+    width:20%;
+}
+.content{
+    width:50%;
+}

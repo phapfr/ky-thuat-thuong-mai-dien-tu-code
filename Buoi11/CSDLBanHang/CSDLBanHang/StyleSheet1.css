@@ -1,0 +1,39 @@
+﻿.menu{
+    text-align:center;
+    background-color:crimson;
+    color: white;
+    padding:3px;
+    font-size:20px;
+    font-family:Arial;
+}
+.menu a {
+    margin: 10px;
+    cursor: pointer;
+}
+.phanthan{
+    display:flex;
+    border:1px solid black;
+}
+.phanthan .sidebar{
+    flex:15%;
+    background-color:gold;
+    border-right:1px solid black;
+}
+.phanthan .content{
+    flex:60%;
+    border-right:1px solid black;
+}
+.phanthan .dangnhap {
+    flex:25%;
+    background-color: aquamarine;
+    border-right: 1px solid black;
+}
+.footer{
+    text-align:center;
+    background-color:wheat;
+    padding:3px;
+}
+
+.phanthan .sidebar .tenloai {
+    font-size: 20px;
+}

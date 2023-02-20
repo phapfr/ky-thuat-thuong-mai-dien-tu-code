@@ -1,0 +1,80 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="Thi_GK_Sach.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        .main {
+            width: 100%;
+            height: auto;
+        }
+
+        .left {
+            width: 15%;
+            height: auto;
+            float: left;
+        }
+
+        .right {
+            width: 25%;
+            height: auto;
+            float: right;
+        }
+
+        .tensach {
+            text-decoration: none;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="main">
+            <div class="left">
+                <b>Danh mục loại sách</b>
+                <asp:DataList ID="DataList1" runat="server">
+                    <ItemTemplate>
+                        <div class="tensach">
+                            <asp:LinkButton ID="LinkButton1" runat="server" Text='<%# Eval("TenLoai") %>' OnClick="LinkButton1_Click" CommandArgument='<%# Eval("MaLoai") %>'></asp:LinkButton>
+                        </div>
+                    </ItemTemplate>
+                </asp:DataList>
+            </div>
+
+            <div class="right">
+                <b>Đăng nhập</b>
+                <table>
+                    <tr>
+                        <td>Tên đăng nhập
+                        </td>
+                        <td>
+                            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Mật khẩu
+                        </td>
+                        <td>
+                            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <asp:Button ID="Button1" runat="server" Text="Đăng Nhập" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="content">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

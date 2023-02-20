@@ -1,0 +1,47 @@
+﻿.banner{
+    margin-bottom:5px;
+}
+.body .navbar {
+    
+    text-align: center;
+    background-color:darkgray;
+    color:white;
+}
+.body .navbar a {
+    font-weight:900;
+    cursor: pointer;
+    margin: 10px;
+}
+.body .menudoc {
+    background-color: rgb(48,48,48);
+    font-size: 20px;
+    color:white;
+}
+.body .menudoc a{
+    font-style:italic;
+    text-decoration-line:underline;
+    cursor:pointer;
+}
+.body .phanphu {
+    background-color: cadetblue;
+    color:white;
+    position: absolute;
+    right: 20px;
+    font-size: 20px;
+}
+.body .phanphu a{
+    font-style: italic;
+    text-decoration-line: underline;
+    cursor: pointer;
+}
+.body .noidung{
+    text-align:center;
+}
+.footer{
+    margin-top:5px;
+    text-align:center;
+    color:white;
+    background-color:aqua;
+    font-weight:500;
+    padding:3px;
+}

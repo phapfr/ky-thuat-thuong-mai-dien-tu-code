@@ -1,0 +1,51 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="DienThoai.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        .main{
+            width:100%;
+            height:auto;
+        }
+        .sidebar{
+            width:20%;
+            height:auto;
+            float:left;
+        }
+        .dangnhap{
+            width:25%;
+            height:auto;
+            float:right;
+        }
+        .tenhsx{
+            text-transform:uppercase;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="main">
+            <div class="sidebar">
+                <b>Hãng điện thoại</b>
+                <asp:DataList ID="DataList1" runat="server">
+                    <ItemTemplate>
+                        <asp:LinkButton CssClass="tenhsx" ID="LinkButton1" runat="server" Text='<%# Eval("TenHangSanXuat") %>' OnClick="LinkButton1_Click" CommandArgument='<%# Eval("MaHangSanXuat") %>'></asp:LinkButton>
+                    </ItemTemplate>
+                </asp:DataList>
+            </div>
+            <div class="dangnhap">
+                <b>Đăng nhập</b>
+            </div>
+            <div class="content">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

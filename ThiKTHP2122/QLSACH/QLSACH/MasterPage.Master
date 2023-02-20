@@ -1,0 +1,50 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="QLSACH.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        .main{
+            width:100%;
+            height:auto;
+        }
+        .left{
+            width:20%;
+            height:auto;
+            float:left;
+        }
+        .right{
+            width:25%;
+            height:auto;
+            float:right;
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="main">
+            <div class="left">
+                <b>Danh mục sách</b>
+                <asp:DataList ID="DataList1" runat="server">
+                    <ItemTemplate>
+                        <asp:LinkButton ID="LinkButton1" runat="server" Text='<%# Eval("TenDanhMuc") %>' CommandArgument='<%# Eval("MaDanhMuc") %>' OnClick="LinkButton1_Click"></asp:LinkButton>
+                    </ItemTemplate>
+                </asp:DataList>
+            </div>
+            <div class="right">
+                <b>Đăng nhập</b>
+
+            </div>
+            <div class="content">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

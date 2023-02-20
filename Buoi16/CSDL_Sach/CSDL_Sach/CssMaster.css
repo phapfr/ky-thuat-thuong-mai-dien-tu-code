@@ -1,0 +1,279 @@
+﻿.menu {
+    background-color: #1f3599;
+    color: whitesmoke;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.banner {
+    background-color: white;
+}
+
+.menu a {
+    padding-bottom: 4px;
+    padding-right: 6px;
+    padding-left: 6px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.menu .menuthaotac a:hover {
+    color: #1f3599;
+    background-color: white;
+    transition: 1s;
+}
+
+.menu .tc {
+    color: gold;
+    font-family: 'Brush Script MT';
+}
+
+.menu .menuthaotac .sp, .gh, .km, .lh, .tb {
+    color: ghostwhite;
+}
+
+
+.danhmucsach {
+    color: black;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+    .danhmucsach:hover {
+        color: orange;
+    }
+
+.phanthan {
+    display: flex;
+    border: 1px solid gray;
+}
+
+    .phanthan .sidebar {
+        background-color: azure;
+        border-right: 1px solid gray;
+        flex: 10%;
+        padding: 5px;
+        font-family: 'Courier New';
+    }
+
+    .phanthan .content {
+        border-right: 1px solid gray;
+        flex: 60%;
+    }
+
+    .phanthan .dangnhap {
+        background-color: azure;
+        flex: 30%;
+    }
+
+
+
+.marquee {
+    width: 150px;
+    margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+    .marquee span {
+        display: inline-block;
+        padding-left: 100%;
+        text-indent: 0;
+        animation: marquee 5s linear infinite;
+    }
+
+@keyframes marquee {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-100%, 0);
+    }
+}
+
+.footer {
+    text-align: center;
+    padding: 5px;
+    background-color: darkgray;
+    color: black;
+}
+
+.anhhome {
+    width: 100%;
+    height: 100%;
+}
+
+.nutdangnhap {
+    width: 100px;
+    padding: 5px;
+    border-radius: 3px;
+    outline: 0;
+    border: 1px solid gray;
+    background-color: buttonface;
+    font-weight: 400;
+    color: black;
+}
+
+    .nutdangnhap:hover {
+        color: white;
+        background: #f12711;
+        background: -webkit-linear-gradient(to right, #f12711, #f5af19);
+        background: linear-gradient(to right, #f12711, #f5af19);
+    }
+
+.sach1:hover {
+    box-shadow: 1px 2px 3px 5px gray;
+    border-radius: 3px;
+    transition: 1s;
+}
+
+.tungsanpham {
+    cursor: pointer;
+}
+
+.phanchitiet {
+    display: flex;
+}
+
+    .phanchitiet .phanhinhsach {
+        flex: 40%;
+        border-right: 1px solid gray;
+    }
+
+    .phanchitiet .phantensach {
+        flex: 60%;
+    }
+
+.tongtien {
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    font-style: italic;
+    color: darkorange;
+}
+
+/*.shakect:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+}*/
+
+
+.element {
+    width: 250px;
+    height: auto;
+    position: relative;
+    margin: 0 auto;
+    animation-name: bounce;
+    animation-duration: 10s, 10s;
+    animation-iteration-count: infinite, infinite;
+}
+
+@-webkit-keyframes bounce {
+    from {
+        top: 150px;
+        animation-timing-function: ease-out;
+    }
+
+    25% {
+        top: 50px;
+        animation-timing-function: ease-in;
+    }
+
+    50% {
+        top: 200px;
+        animation-timing-function: ease-out;
+    }
+
+    75% {
+        top: 75px;
+        animation-timing-function: ease-in;
+    }
+
+    to {
+        top: 150px;
+    }
+}
+
+.masach {
+    text-align: center;
+}
+
+.thongbao {
+    background-color: #fff4cc;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 4px 15px;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    cursor: pointer;
+    text-align: justify;
+}
+
+    .thongbao:hover {
+        background-color: lightsalmon;
+    }
+
+@media screen and (max-width: 414px) {
+    .phanthan {
+        display: unset;
+    }
+
+        .phanthan .sidebar {
+            text-align: center;
+        }
+}
+
+@media screen and (max-width:800px) {
+    .phanthan {
+        display: unset;
+    }
+}

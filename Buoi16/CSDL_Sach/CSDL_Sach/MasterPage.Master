@@ -1,0 +1,105 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="CSDL_Sach.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="CssMaster.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="banner">
+            <asp:Image ID="Image1" runat="server" ImageUrl="/images/anhbanner.jpg" Width="100%" />
+            <asp:Image ID="Image2" runat="server" ImageUrl="/images/bannersach.png" Width="100%" />
+        </div>
+        <div class="menu">
+            <span title="phapbooks.com">
+                <asp:HyperLink CssClass="tc" ID="HyperLink1" runat="server" NavigateUrl="~/HomePage.aspx">PHAPBOOKS</asp:HyperLink>
+            </span>
+            <span class="menuthaotac">
+                <asp:HyperLink CssClass="sp" ID="HyperLink2" runat="server" NavigateUrl="~/SanPhamSach.aspx">Toàn Bộ Sách</asp:HyperLink>
+                <asp:HyperLink CssClass="gh" ID="HyperLink3" runat="server" NavigateUrl="~/GioHang.aspx">Giỏ Hàng</asp:HyperLink>
+                <asp:HyperLink CssClass="tb" ID="HyperLink4" runat="server" NavigateUrl="~/ThongBao.aspx">Thông Báo</asp:HyperLink>
+                <asp:HyperLink CssClass="km" ID="HyperLink5" runat="server" NavigateUrl="~/KhuyenMai.aspx">Khuyến Mãi</asp:HyperLink>
+                <asp:HyperLink CssClass="lh" ID="HyperLink6" runat="server" NavigateUrl="~/LienHe.aspx">Liên Hệ</asp:HyperLink>
+                <asp:TextBox placeholder="Nhập vào tên sách" runat="server" />
+                <asp:Button ID="Button1" runat="server" Text="Tìm Sách" />
+            </span>
+        </div>
+        <div class="phanthan">
+            <div class="sidebar">
+                <p class="marquee"><span><b style="color: orangered; font-weight: 900; font-size: 25px">Danh mục loại sách</b></span></p>
+                <asp:DataList ID="DataList1" runat="server">
+                    <ItemTemplate>
+                        <asp:LinkButton CssClass="danhmucsach" ID="LinkButton1" runat="server" CommandArgument='<%# Eval("MaLoai") %>'
+                            OnClick="LinkButton1_Click" Text='<%# Eval("TenLoai") %>'></asp:LinkButton>
+                    </ItemTemplate>
+                </asp:DataList>
+            </div>
+            <div class="content">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div class="dangnhap" align="center">
+                <asp:Login ID="Login1" runat="server" OnAuthenticate="Login1_Authenticate">
+                    <LayoutTemplate>
+                        <table cellpadding="1" cellspacing="0" style="border-collapse: collapse;">
+                            <tr>
+                                <td>
+                                    <table cellpadding="0">
+                                        <tr>
+                                            <td align="center" colspan="2" style="margin-bottom: 3px">Thông Tin Đăng Nhập</td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right">
+                                                <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName">Tên Đăng Nhập:</asp:Label>
+                                            </td>
+                                            <td>
+                                                <asp:TextBox ID="UserName" runat="server"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName" ErrorMessage="User Name is required."
+                                                    ToolTip="User Name is required." ValidationGroup="ctl00$Login1">*</asp:RequiredFieldValidator>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right">
+                                                <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password">Mật Khẩu:</asp:Label>
+                                            </td>
+                                            <td>
+                                                <asp:TextBox ID="Password" runat="server" TextMode="Password"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password" ErrorMessage="Password is required."
+                                                    ToolTip="Password is required." ValidationGroup="ctl00$Login1">*</asp:RequiredFieldValidator>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <asp:CheckBox ID="RememberMe" runat="server" Text="Ghi Nhớ Mật Khẩu" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" colspan="2" style="color: Red;">
+                                                <asp:Literal ID="FailureText" runat="server" EnableViewState="False"></asp:Literal>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right" colspan="2">
+                                                <asp:Button CssClass="nutdangnhap" ID="LoginButton" runat="server" CommandName="Login" Text="Đăng Nhập" ValidationGroup="ctl00$Login1" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </LayoutTemplate>
+                </asp:Login>
+            </div>
+        </div>
+        <div class="footer">
+            <b>© Copyright by Nguyễn Hồng Pháp</b>
+        </div>
+    </form>
+</body>
+</html>

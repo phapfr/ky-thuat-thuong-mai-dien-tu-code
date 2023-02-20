@@ -1,0 +1,61 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="CSDLBanHang.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+
+    <link href="StyleSheet1.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div>
+                <asp:Image ID="Image1" ImageUrl="/images/quangcao.jpg" runat="server" Width="100%" />
+            </div>
+            <div class="menu">
+                <asp:HyperLink class="danhmuc" ID="HyperLink1" runat="server" ForeColor="White" NavigateUrl="~/Default.aspx">Trang chủ</asp:HyperLink>
+                <asp:HyperLink class="danhmuc" ID="HyperLink2" runat="server">Dịch vụ</asp:HyperLink>
+                <asp:HyperLink class="danhmuc" ID="HyperLink3" runat="server" ForeColor="White" NavigateUrl="~/sanpham.aspx">Sản phẩm</asp:HyperLink>
+                <asp:HyperLink class="danhmuc" ID="HyperLink4" runat="server">Liên hệ</asp:HyperLink>
+                <asp:HyperLink class="danhmuc" ID="HyperLink5" runat="server">Khuyến mãi</asp:HyperLink>
+            </div>
+            <div class="phanthan">
+
+                <div class="sidebar">
+                    <i><b>Danh sách các loại hàng:</b></i>
+                    <br />
+                    <asp:DataList ID="DataList1" runat="server" OnSelectedIndexChanged="DataList1_SelectedIndexChanged">
+                        <ItemTemplate>
+                            <span class="tenloai" style="text-decoration:underline">
+                                <asp:LinkButton ID="LinkButton1" runat="server" Text='<%# Eval("TenLoai") %>'
+                                    CommandArgument='<%# Eval("MaLoai") %>' ForeColor="black" OnClick="LinkButton1_Click"></asp:LinkButton>
+                            </span>
+                        </ItemTemplate>
+                    </asp:DataList>
+                </div>
+
+                <div class="content">
+                    <section id="maincontent">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </section>
+                </div>
+
+                <div class="dangnhap" style="padding-left:30px">
+                    <asp:Login ID="Login1" runat="server" OnAuthenticate="Login1_Authenticate">
+                    </asp:Login>
+                </div>
+
+            </div>
+            <div class="footer">
+                Copyright by Nguyễn Hồng Pháp
+            </div>
+        </div>
+    </form>
+</body>
+</html>

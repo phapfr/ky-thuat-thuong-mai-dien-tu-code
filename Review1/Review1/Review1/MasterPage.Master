@@ -1,0 +1,52 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="Review1.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        .main {
+            width: 100%;
+            height: auto;
+        }
+
+        .sidebar {
+            width: 15%;
+            height: auto;
+            float: left;
+        }
+
+        .dangnhap {
+            width: 25%;
+            height: auto;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="main">
+            <div class="sidebar">
+                Danh Mục Sách
+                <asp:DataList ID="DataList1" runat="server">
+                    <ItemTemplate>
+                        <asp:LinkButton ID="LinkButton1" runat="server" CommandArgument='<%# Eval("MaDanhMuc") %>' OnClick="LinkButton1_Click" Text='<%# Eval("TenDanhMuc") %>'></asp:LinkButton>
+                    </ItemTemplate>
+                </asp:DataList>
+            </div>
+            <div class="dangnhap">
+                Đăng nhập
+            <asp:Login ID="Login1" runat="server"></asp:Login>
+            </div>
+            <div class="content">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+
+    </form>
+</body>
+</html>
